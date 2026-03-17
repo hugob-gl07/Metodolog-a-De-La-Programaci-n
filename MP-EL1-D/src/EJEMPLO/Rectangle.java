@@ -20,13 +20,13 @@ public class Rectangle extends Shape {
     public void setWidth(double width) { this.width = width; }
     public double getLength() { return length; }
     public void setLength(double length) { this.length = length; }
-//
+//Método abstracto adaptado a la clase rectangulo.
     @Override
     public double getArea() { return width * length; }
-
+//Método abstracto adaptado a la clase rectangulo.
     @Override
     public double getPerimeter() { return 2 * (width + length); }
-
+//Extensión del ToString de la clase abstracta, devuelve por pantalla los elementos que componen al rectangulo.
     @Override
     public String toString() {
         return "Rectangle[" + super.toString() + ", width=" + width + ", length=" + length + "]";
