@@ -1,0 +1,6 @@
+package Ejercicios.GeometricObject;
+
+public interface GeometricObject {
+    double getArea(); //
+    double getPerimeter(); //
+}

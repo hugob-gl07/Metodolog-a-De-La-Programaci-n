@@ -1,0 +1,27 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+abstract class Animal {
+    {abstract} +greeting(): void
+}
+
+class Cat {
+    +greeting(): void
+}
+
+class Dog {
+    +greeting(): void
+    +greeting(another: Dog): void
+}
+
+class BigDog {
+    +greeting(): void
+    +greeting(another: Dog): void
+}
+
+Animal <|-- Cat : extends
+Animal <|-- Dog : extends
+Dog <|-- BigDog : extends
+
+@enduml
