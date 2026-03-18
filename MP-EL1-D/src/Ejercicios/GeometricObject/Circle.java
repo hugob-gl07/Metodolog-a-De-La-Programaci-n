@@ -17,13 +17,15 @@ public class Circle implements GeometricObject {
         return Math.PI * radius * radius; 
     } 
 
-    // Implementación del perímetro (longitud de la circunferencia).
+    // Implementación del perímetro (longitud de la circunferencia), emplea la formula (2*Math.PI*radio)
+    //Devuelve el perímetro del circulo en formato del tipo básico double.
     @Override
     public double getPerimeter() { 
         return 2 * Math.PI * radius; 
     } 
 
     // Representación textual del objeto para facilitar la depuración.
+    //Devuelve por pantalla el radio del objeto en forma de tipo básico string
     @Override
     public String toString() { 
         return "Circle[radius=" + radius + "]"; 
