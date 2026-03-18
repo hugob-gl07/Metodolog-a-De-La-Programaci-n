@@ -8,7 +8,7 @@ public class Main {  // save as "TestCylinder.java"
         System.out.println(s1.getPerimeter());     // versión del circulo
         System.out.println(s1.getColor());
         System.out.println(s1.isFilled());
-        System.out.println(s1.getRadius()); //ERROR: Este metodo no está implementado en Shape.
+        // System.out.println(s1.getRadius()); ERROR: Este metodo no está implementado en Shape.
 
         Circle c1 = (Circle)s1;                   // Downcast back to Circle
         System.out.println(c1);
@@ -18,14 +18,14 @@ public class Main {  // save as "TestCylinder.java"
         System.out.println(c1.isFilled());
         System.out.println(c1.getRadius());
 
-        Shape s2 = new Shape(); //ERROR: No se puede crear una instancia de una clase abstracta.
+        //Shape s2 = new Shape(); ERROR: No se puede crear una instancia de una clase abstracta.
 
         Shape s3 = new Rectangle(1.0, 2.0, "red", false);   // Upcast
         System.out.println(s3);
         System.out.println(s3.getArea()); //version del rectangulo
         System.out.println(s3.getPerimeter()); //version del rectangulo
         System.out.println(s3.getColor()); //viene de Shape
-        System.out.println(s3.getLength());
+        //System.out.println(s3.getLength()); ERROR: Este metodo no está implementado en Shape.
 
         Rectangle r1 = (Rectangle)s3;   // downcast
         System.out.println(r1);
@@ -37,7 +37,7 @@ public class Main {  // save as "TestCylinder.java"
         System.out.println(s4);
         System.out.println(s4.getArea()); // versión del cuadrado
         System.out.println(s4.getColor());// viene de Shape
-        System.out.println(s4.getSide()); // ERROR:No es reconocido por shape
+        //System.out.println(s4.getSide()); ERROR:No es reconocido por shape
 
 // Take note that we downcast Shape s4 to Rectangle,
 //  which is a superclass of Square, instead of Square
@@ -45,7 +45,7 @@ public class Main {  // save as "TestCylinder.java"
         System.out.println(r2);
         System.out.println(r2.getArea());//versión del rectangulo
         System.out.println(r2.getColor()); //viene de Shape
-        System.out.println(r2.getSide());//ERROR: Este metodo es del cuadrado, no del rectangulo
+        // System.out.println(r2.getSide()); ERROR: Este metodo es del cuadrado, no del rectangulo
         System.out.println(r2.getLength());// metodo del rectangulo.
 // Downcast Rectangle r2 to Square
         Square sq1 = (Square)r2;

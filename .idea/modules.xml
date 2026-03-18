@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/MP-EL1-A/MP-EL1-A.iml" filepath="$PROJECT_DIR$/MP-EL1-A/MP-EL1-A.iml" />
       <module fileurl="file://$PROJECT_DIR$/Metodolog-a-De-La-Programación.iml" filepath="$PROJECT_DIR$/Metodolog-a-De-La-Programación.iml" />
     </modules>
   </component>
