@@ -1,5 +1,7 @@
 package BloqueB.MyTriangle;
 
+import BloqueB.Arrays.MyPoint;
+
 public class Main {
     public static void main(String[] args) {
         MyTriangle t1 = new MyTriangle(0, 0, 4, 0, 2, 3);
