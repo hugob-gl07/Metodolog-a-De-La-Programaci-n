@@ -1,0 +1,42 @@
+@startuml
+class Book {
+    - name:String
+    - author:Author
+    - price: double
+    - qty: int = 0
+    + Book(name:String,author:Author,price:double)
+    + Book(name:String,author:Author,price:double,qty:int)
+    + getName():String
+    + getAuthor():Author
+    + getPrice():double
+    + setPrice(price:double):void
+    + getQty():int
+    + setQty(qty:int):void
+    + toString():String
+}
+class Author{
+    -name:String
+    -email:String
+    -gender:char
+    + Author(name:String, email:String, gender:char)
+    + getName():String
+    + getEmail():String
+    + setEmail(email:String):void
+    + getGender():char
+    + toString():String
+}
+
+note right of Author::gender
+    char of 'm' or 'f'
+end note
+
+note right of Author::toString
+    Author[name=?,email=?,gender=?]
+end note
+
+note bottom of Book
+    "Book[name=?,Author[name=?,email=?,gender=?],price=?,qty=?]"
+end note
+
+Book o-right-- Author
+@enduml
