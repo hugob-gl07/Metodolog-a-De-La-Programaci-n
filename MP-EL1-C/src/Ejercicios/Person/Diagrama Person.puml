@@ -1,0 +1,52 @@
+@startuml PacKageMerge
+
+
+class Person{
+    - name:String
+    - address:String
+    + Person(name:String,address:String)
+    + getName():String
+    + getAddress():String
+    + setAddress(address:String):void
+    + toString():String
+}
+class Student{
+    - program:String
+    - year:int
+    - fee:double
+    + Student(name:String,address:String,program:String,year:int,fee:double)
+    + getProgram(program:String):void
+    + setProgram(program:String):void
+    + getYear():int
+    + setYear(year:int):void
+    + getFee():double
+    + setFee(fee:double):void
+    + toString():String
+}
+class Staff{
+    - school:String
+    - pay:double
+    + Staff(name:String,address:String,school:String,pay:double)
+    + getSchool():String
+    + setSchool(school:String):void
+    + getPay():double
+    + setPay(pay:double):void
+    + toString():String
+}
+
+note left of Person::toString
+    Person[name=?,address=?]
+end note
+
+note bottom of Student
+    Student[Person[name=?,address=?],program=?,year=?,fee=?]
+end note
+
+note bottom of Staff
+    Staff[Person[name=?,address=?],school=?,pay=?]
+end note
+
+Person <|-- Student:extends
+Person <|-- Staff: extends
+
+@enduml

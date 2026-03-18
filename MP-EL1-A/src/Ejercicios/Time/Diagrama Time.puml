@@ -1,0 +1,39 @@
+@startuml
+class Time {
+    - hour:int
+    - minute:int
+    - second:int
+    + Time(hour:int,minute:int,second:int)
+    + getHour():int
+    + getMinute():int
+    + getSecond():int
+    + setHour(hour:int):void
+    + setMinute(minute:int):void
+    + setSecond(second:int):void
+    + setTime(hour:int,minute:int,second:int):void
+    + toString():String
+    + nextSecond():Time
+    + previousSecond():Time
+}
+
+note left of Time::hour
+    hour = [0, 23]
+end note
+
+note left of Time::minute
+    minute = [0, 59]
+end note
+
+note left of Time::second
+    second = [0, 59]
+end note
+
+note bottom of Time
+    hh:mm:ss width leading zero
+end note
+
+note left of Time::nextSecond
+    Advance by 1 second and return this instance
+end note
+
+@enduml

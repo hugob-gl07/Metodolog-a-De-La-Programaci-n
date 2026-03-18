@@ -1,3 +1,4 @@
+package Circle;
 /**
  * Representamos un círculo con un radio y un color.
  */
@@ -11,13 +12,11 @@ public class Circle {
         color="red";
     }
     /** Constructor con radio dado y color por defecto*/
-
     public Circle(double r){
         radius=r;
         color="red";
     }
     /** Constructor con el radio y el color dados. */
-
     public Circle(double radius, String color){
         this.radius=radius;
         this.color= color;
@@ -26,22 +25,22 @@ public class Circle {
     public double getRadius(){
         return radius;
     }
-    /** Calcular y devolver el area del circulo*/
+    /** Calcular y devolver el área del círculo*/
     public double getArea(){
 
         return radius*radius*Math.PI;
 
     }
-    /** Devolver el color del circulo*/
+    /** Devolver el color del círculo*/
     public String getColor(){
 
         return color;
     }
-    /** Modifica el radio del circulo*/
+    /** Modifica el radio del círculo*/
     public void setRadius(double newRadius){
         this.radius=newRadius;
     }
-    /**Modifca el color del Circulo*/
+    /**Modifca el color del Círculo*/
     public void setColor(String newColor){
 
         color=newColor;

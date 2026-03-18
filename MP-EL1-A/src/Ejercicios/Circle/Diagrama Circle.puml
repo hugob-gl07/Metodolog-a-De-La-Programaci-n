@@ -1,0 +1,14 @@
+@startuml
+class Circle{
+    - radius:double= 1.0
+    + Circle()
+    + Circle(radius:double)
+    + getRadius():double
+    + setRadius(radius:double):void
+    + getArea():double
+    + getCircumference():double
+    + toString():String
+}
+note "Circle[radius=?,color=?]" as n1
+Circle::toString.n1
+@enduml

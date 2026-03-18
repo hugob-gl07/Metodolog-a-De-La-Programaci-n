@@ -1,0 +1,46 @@
+@startuml
+class Animal{
+    - name:String
+    + Animal(name:String)
+    + toString():String
+}
+class Mammal{
+    + Mammal(name:String)
+    + toString():String
+}
+class Cat{
+    + Cat(name:String)
+    + greets():void
+    + toString():String
+}
+class Dog {
+    + Dog(name:String)
+    + greets():void
+    + greets(another:Dog):void
+    + toString():String
+}
+Animal <|-- Mammal
+Mammal <|-- Cat
+Mammal <|-- Dog
+
+note left of Cat::greets
+    Print Meow"
+end note
+
+note right of Dog::greets
+    "Print Woof"
+end note
+
+note right of Dog::greets(another:Dog)
+       Print Woooof
+end note
+
+note as toString
+    toString():
+    Animal[name=?]
+    Mamaml[Animal[name=?]]
+    Cat[Mamaml[Animal[name=?]]]"
+    Dog[Mamaml[Animal[name=?]]]"
+end note
+
+@enduml

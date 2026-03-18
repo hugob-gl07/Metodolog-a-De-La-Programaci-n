@@ -1,0 +1,35 @@
+@startuml
+class Employee{
+    - id:int
+    - firstName:String
+    - lastName:String
+    - salary:int
+    + Employee(id:int,firstName:String,lastName:String,salary:int)
+    + getId():int
+    + getFirstName():String
+    + getLastName():String
+    + getName():String
+    + getSalary():int
+    + setSalary(salary:int):int
+    + getAnnualSalary():int
+    + raiseSalary(int percent):int
+    + toString():String
+}
+
+note bottom of Employee
+    Employee[id=?,name=firstName lastname, salary=?]
+end note
+
+note right of Employee::getAnnualSalary
+    salary*12
+end note
+
+note right of Employee::getName
+    firstName lastName
+end note
+
+note left of Employee::raiseSalary
+    Increase the salary by the percent and return the new salary
+end note
+
+@enduml

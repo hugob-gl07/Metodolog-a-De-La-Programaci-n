@@ -1,0 +1,43 @@
+@startuml
+class Point {
+    - x:float = 0.0f
+    - y:float = 0.0f
+    + Point(x:float,y:float)
+    + Point()
+    + getX():float
+    + setX(x:float):void
+    + getY():float
+    + setY(y:float):void
+    + setXY(x:float,y:float):void
+    + getXY():float[2]
+    + toString():String
+}
+class MovablePoint{
+    - xSpeed:float = 0.0f
+    - ySpeed:float = 0.0f
+    + MovablePoint(x:float,y:float,xSpeed:float,ySpeed:float)
+    + MovablePoint(xSpeed:float,ySpeed:float)
+    + MovablePoint()
+    + getXSpeed():float
+    + setXSpeed(xSpeed:float):void
+    + getYSpeed():float
+    + setYSpeed(ySpeed:float):void
+    + setSpeed(xSpeed:float,ySpeed:float):void
+    + getSpeed():float[2]
+    + toString():String
+    + move():MovablePoint
+}
+
+note left of Point::toString
+    (x,y)
+end note
+
+note left of MovablePoint::toString
+    (x,y),speed=(xs,ys)
+end note
+note left of MovablePoint::move
+    x += xSpeed
+    y += ySpeed
+end note
+Point <|-- "extends " MovablePoint
+@enduml

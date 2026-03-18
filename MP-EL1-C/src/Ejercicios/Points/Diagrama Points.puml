@@ -1,0 +1,43 @@
+@startuml
+class Point2D{
+    - x:float = 0.0f
+    - y:float = 0.0f
+    + Point2D(x:float,y:float)
+    + Point2D()
+    + getX():float
+    + setX(x:float):void
+    + getY():float
+    + setY(y:float):void
+    + getXY():float[2]
+    + setXY(x:float,y:float):void
+    + toString():String
+}
+class Point3D{
+    - z:float = 0.0f
+    + Point3D(x:float,y:float,z:float)
+    + Point3D()
+    + getZ():float
+    + setZ(z:float):void
+    + getXYZ():float[3]
+    + setXYZ(x:float,y:float,z:float):void
+    + toString():String
+}
+note left of Point2D::getXY
+    Array of {x,y}
+end note
+
+note left of Point2D::toString
+    (x,y)
+end note
+
+note left of Point3D::getXYZ
+    Array of {x,y,z}
+end note
+
+note left of Point3D::toString
+     "(x,y,z)"
+end note
+
+Point2D <|-- "extends " Point3D
+
+@enduml
