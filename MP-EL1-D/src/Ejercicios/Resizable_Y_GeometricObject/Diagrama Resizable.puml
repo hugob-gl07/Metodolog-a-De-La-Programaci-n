@@ -1,0 +1,36 @@
+@startuml
+interface GeometricObject {
+    + getArea(): double
+    + getPerimeter(): double
+}
+interface Resizable {
+    + resize(percent:int):void
+}
+class Circle{
+    # radius:double
+    + Circle(radius:double)
+    + getArea():double
+    + getPerimeter():double
+    + toString():String
+}
+class ResizableCircle{
+    + ResizableCircle(radius:double)
+    + resize(percent:int):void
+    + toString():String
+}
+Circle ..|> GeometricObject : implements
+ResizableCircle --|> Circle : extends
+ResizableCircle ..|> Resizable : implements
+
+note left of Circle::getArea
+**PI * radio²**
+end note
+
+note left of Circle::getPerimeter
+**2 * PI * radio**
+end note
+
+note left of ResizableCircle::resize
+**radio *= percent / 100.0**
+end note
+@enduml

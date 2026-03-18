@@ -1,4 +1,4 @@
-package Ejercicios.Diagrama;
+package Ejercicios.Animal;
 
 public class TestAnimal {
     public static void main(String[] args) {

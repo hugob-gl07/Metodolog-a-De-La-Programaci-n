@@ -1,0 +1,54 @@
+@startuml
+abstract class Animal {
+   # name: String
+   + Animal(name:String)
+   + **greets():void**
+}
+class Cat {
+   + Cat(name:String)
+   + **greets():void**
+}
+class Dog {
+   + Dog(name:String)
+   + **greets():void**
+   + **greets(another:Dog):void**
+}
+class BigDog {
+   + BigDog(name:String)
+   + **greets():void**
+   + **greets(another:Dog):void**
+   + **greets(another:BigDog):void**
+}
+Cat --|> Animal: extends
+Dog --|> Animal: extends
+BigDog --|> Dog: extends
+
+note bottom of Animal
+**MÉTODO ABSTRACTO**
+**IMPLEMENTADO EN CADA SUBCLASE**
+end note
+
+note right of Cat::greets
+**"Meow"**
+end note
+
+note right of Dog::greets
+**"Woof"**
+end note
+
+note left of Dog::greets(another:Dog)
+**"Woooof"**
+end note
+
+note right of BigDog::greets
+**"Wooow"**
+end note
+
+note left of BigDog::greets(another:Dog)
+**"Woooooow"**
+end note
+
+note right of BigDog::greets(another:BigDog)
+**"Wooooooooow"**
+end note
+@enduml
