@@ -1,0 +1,33 @@
+package es.uah.matcomp.mp.e1.ejerciciosclases.Diagrama;
+//A continuación pondremos en dicho código las salidas por pantalla de este:
+public class TestAnimal {
+    public static void main(String[] args) {
+        // Using the subclasses
+        Cat cat1 = new Cat();
+        cat1.greeting(); //salida: "Meow!"
+        Dog dog1 = new Dog();
+        dog1.greeting(); //salida: "Woof!"
+        BigDog bigDog1 = new BigDog();
+        bigDog1.greeting(); //salida: "Woow!"
+
+        // Using Polymorphism
+        Animal animal1 = new Cat();
+        animal1.greeting(); // salida: "Meow!"
+        Animal animal2 = new Dog();
+        animal2.greeting(); // salida: "Woof!"
+        Animal animal3 = new BigDog();
+        animal3.greeting(); // salida: "Woow!"
+        Animal animal4 = new Animal(); //Error: no se puede crear una instancia de una clase abstracta
+
+        // Downcast
+        Dog dog2 = (Dog)animal2;
+        BigDog bigDog2 = (BigDog)animal3;
+        Dog dog3 = (Dog)animal3;
+        Cat cat2 = (Cat)animal2; //Error: Estamos haciendo una conversion de un dog a un cat, es una excepcion
+        dog2.greeting(dog3);
+        dog3.greeting(dog2);
+        dog2.greeting(bigDog2);
+        bigDog2.greeting(dog2);
+        bigDog2.greeting(bigDog1);
+    }
+}
