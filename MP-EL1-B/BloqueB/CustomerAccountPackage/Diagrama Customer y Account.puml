@@ -1,0 +1,48 @@
+@startuml
+class Customer{
+    - id:int
+    - name:String
+    - gender:char
+    + Customer(id:int,name:String,discount:int)
+    + getId():int
+    + getName():String
+    + getGender():char
+    + toString():String
+}
+class Account{
+    - id:int
+    - customer:Customer
+    - balance:double = 0.0
+    + Account(id:int,customer:Customer,balance:double)
+    + getId():int
+    + getCustomer():Customer
+    + getBalance():double
+    + setBalance(balance:double):void
+    + toString():String
+    + getCustomerName():String
+    + deposit(amount:double):Account
+    + withdraw(amount:double):Account
+}
+
+Account o-right- "1" Customer
+note bottom of Customer
+    name(id)
+end note
+
+note left of Account::toString
+    name(id) balance=$xxx.xx balance rounded to 2 decimal places
+end note
+
+note left of Account::deposit
+    Add amount to balance
+end note
+
+note bottom of Account
+if (balance >= amount)
+    subtract amount to balance
+else
+    print amount withdrawn exceeds the current balance!" as n4
+end note
+
+
+@enduml

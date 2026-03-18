@@ -14,7 +14,12 @@ public class Book { /** creamos una serie de datos privados que usaremos mas ade
         this.price = price;
         this.qty = qty;
     }
-
+    public Book(String isbn, String name, Author author, double price) { /** creamos esta clase para definir las variables anteriores pero sin la cantidad de libros */
+        this.isbn = isbn;
+        this.name = name;
+        this.author = author;
+        this.price = price;
+    }
     public String getIsbn() { /** una vez que tenemos en valor de cada variable creamos distintos metodos para poder obtener las variables usando solo el metodo el metodo get en otra clase*/
         return isbn;
     }

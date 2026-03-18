@@ -10,7 +10,6 @@ public class Author { /** al igual que en la anterior clase author se pediran lo
         this.email = email;
         this.gender = gender;
     }
-
     public String getName() { /** creamos los metodos para poder obtener despues las variables */
         return name;
     }

@@ -1,0 +1,56 @@
+@startuml
+class MyPoint {
+    - x:int
+    - y:int
+}
+class MyLine{
+    - begin:MyPoint
+    - end:MyPoint
+    + MyLine(x1:int,y1:int,x2:int,y2:int)
+    + MyLine(begin:MyPoint,end:MyPoint)
+    + getBegin():MyPoint
+    + setBegin(begin:MyPoint):void
+    + getEnd():MyPoint
+    + setEnd(end:MyPoint):void
+    + getBeginX():int
+    + setBeginX(int x):void
+    + getBeginY():int
+    + setBeginY(int y):void
+    + getEndX():int
+    + setEndX(int x):void
+    + getEndY():int
+    + setEndY(int y):void
+    + getBeginXY():int[2]
+    + setBeginXY(int x, int y):void
+    + getEndXY():int[2]
+    + setEndXY(int x, int y):void
+    + getLength():double
+    + getGradient():double
+    + toString():String
+}
+
+note left of MyLine::begin
+    A line begin=(x1, y1) to
+    end=(x2, y2)
+end note
+
+note left of MyLine::end
+    A line begin=(x1, y1) to
+    end=(x2, y2)
+end note
+
+note left of MyLine::getLength
+    To use MyPoint's distance()
+end note
+
+note left of MyLine::getGradient
+    Return the gradient in radians.
+    Usa Math.atan2(yDiff, xDiff)
+end note
+
+note bottom of MyLine
+    MyLine[begin=(x1,y1),end=(x2,y2)]
+end note
+MyLine o-right- "1" MyPoint
+
+@enduml

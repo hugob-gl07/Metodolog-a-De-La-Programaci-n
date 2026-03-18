@@ -16,7 +16,11 @@ import BloqueB.AuthorPackage.Author;
             this.price = price;
             this.qty = qty;
         }
-
+        public Book(String name, Author[] authors, double price) { /** creamos un constructor con menos variables para poder usarlo en caso de no querer dar un valor a la cantidad de libros */
+            this.name = name;
+            this.authors = authors;
+            this.price = price;
+        }
         public String getName() { /** creamos los metodos que nos van a permirtir usar las variables */
             return name;
         }
@@ -51,7 +55,6 @@ import BloqueB.AuthorPackage.Author;
             }
             return names;
         }
-
         @Override
         public String toString() { /**creamos un string que une a los autores en una fila de trexto y luego los mete en los datos del libro */
             String authorsStr = "";
