@@ -1,13 +1,14 @@
 package Ejercicios.Animal;
-//Clase Gato, extiende a la clase abstracta Animal.
+
+// Cat es una clase concreta que hereda de Animal.
 public class Cat extends Animal {
-    //Constructor sencillo que emplea el atributo de la clase abstracta (inicializa la clase Gato).
     public Cat(String name) {
-        super(name);
+        super(name); // Llama al constructor de Animal para asignar el nombre.
     }
-//Método greets propio de la clase Gato.
+
+    // Implementación específica del saludo para gatos.
     @Override
     public void greets() {
-        System.out.println("Meow");
+        System.out.println("Meow");//Devuelve por pantalla el método propio de la clase Cat.
     }
 }
