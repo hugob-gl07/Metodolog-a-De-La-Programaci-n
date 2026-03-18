@@ -1,70 +1,85 @@
-
 package BloqueB.Bookpackage;
 
-import BloqueB.AuthorPackage.Author;
+import BloqueB.AuthorPackage.Author;  /** Importamos la clase Author del paquete AuthorPackage. */
 
-    public class Book { /** al igual que en otras clases book creamos las variables que vamos a usar con diferencia de que ahora hay mas de un autor, por lo que creamos un array de variables lo que permite mas de un valor en esa variable */
-        private String name;
-        private Author[] authors;
-        private double price;
-        private int qty = 0;
+/**
+ * Representa un libro con múltiples autores, nombre, precio y cantidad en stock.
+ */
+public class Book {  /** Definimos la clase Book que soporta múltiples autores mediante un array. */
 
+private String name;        // Nombre del libro
+    private Author[] authors;   // Array de autores del libro
+    private double price;       // Precio del libro
+    private int qty = 0;        // Cantidad en stock (inicialmente 0)
 
-        public Book(String name, Author[] authors, double price, int qty) { /** le damos un valor a cada variable */
-            this.name = name;
-            this.authors = authors;
-            this.price = price;
-            this.qty = qty;
-        }
-        public Book(String name, Author[] authors, double price) { /** creamos un constructor con menos variables para poder usarlo en caso de no querer dar un valor a la cantidad de libros */
-            this.name = name;
-            this.authors = authors;
-            this.price = price;
-        }
-        public String getName() { /** creamos los metodos que nos van a permirtir usar las variables */
-            return name;
-        }
-
-        public Author[] getAuthors() {
-            return authors;
-        }
-
-        public double getPrice() {
-            return price;
-        }
-
-        public void setPrice(double price) {
-            this.price = price;
-        }
-
-        public int getQty() {
-            return qty;
-        }
-
-        public void setQty(int qty) {
-            this.qty = qty;
-        }
-
-        public String getAuthorNames() { /** en este caso al ser un array de variables creamos un bucle para poder dar mas de un valor en funcion de i, la cual esta limitada por el n umero de autores, de forma eficiente */
-            String names = "";
-            for (int i = 0; i < authors.length; i++) {
-                names += authors[i].getName();
-                if (i < authors.length - 1) {
-                    names += ", ";
-                }
-            }
-            return names;
-        }
-        @Override
-        public String toString() { /**creamos un string que une a los autores en una fila de trexto y luego los mete en los datos del libro */
-            String authorsStr = "";
-            for (int i = 0; i < authors.length; i++) {
-                authorsStr += authors[i].toString();
-                if (i < authors.length - 1) {
-                    authorsStr += ", ";
-                }
-            }
-            return "Book[name=" + name + ",authors={" + authorsStr + "},price=" + price + ",qty=" + qty + "]";
-        }
+    /** Constructor completo con nombre, array de autores, precio y cantidad. */
+    public Book(String name, Author[] authors, double price, int qty) {
+        this.name = name;       // Guardamos el nombre del libro
+        this.authors = authors; // Guardamos el array de autores
+        this.price = price;     // Guardamos el precio del libro
+        this.qty = qty;         // Guardamos la cantidad en stock
     }
 
+    /** Constructor simplificado sin cantidad (usa valor por defecto 0). */
+    public Book(String name, Author[] authors, double price) {
+        this.name = name;       // Guardamos el nombre del libro
+        this.authors = authors; // Guardamos el array de autores
+        this.price = price;     // Guardamos el precio del libro
+        // qty mantiene valor por defecto 0
+    }
+
+    /** Devuelve el nombre del libro. */
+    public String getName() {
+        return name;  // Devolvemos el nombre del libro
+    }
+
+    /** Devuelve el array de autores del libro. */
+    public Author[] getAuthors() {
+        return authors;  // Devolvemos el array completo de autores
+    }
+
+    /** Devuelve el precio del libro. */
+    public double getPrice() {
+        return price;  // Devolvemos el precio del libro
+    }
+
+    /** Modifica el precio del libro. */
+    public void setPrice(double price) {
+        this.price = price;  // Actualizamos el precio del libro
+    }
+
+    /** Devuelve la cantidad en stock del libro. */
+    public int getQty() {
+        return qty;  // Devolvemos la cantidad en stock
+    }
+
+    /** Modifica la cantidad en stock del libro. */
+    public void setQty(int qty) {
+        this.qty = qty;  // Actualizamos la cantidad en stock
+    }
+
+    /** Devuelve los nombres de todos los autores separados por comas. */
+    public String getAuthorNames() {
+        String names = "";  // Inicializamos cadena vacía para concatenar nombres
+        for (int i = 0; i < authors.length; i++) {
+            names += authors[i].getName();  // Añadimos nombre del autor actual
+            if (i < authors.length - 1) {   // Si no es el último autor
+                names += ", ";              // Añadimos coma y espacio
+            }
+        }
+        return names;  // Devolvemos la lista de nombres formateada
+    }
+
+    /** Devuelve una representación en texto del libro con todos los autores. */
+    @Override
+    public String toString() {
+        String authorsStr = "";  // Inicializamos cadena para autores
+        for (int i = 0; i < authors.length; i++) {
+            authorsStr += authors[i].toString();  // Añadimos representación del autor
+            if (i < authors.length - 1) {         // Si no es el último autor
+                authorsStr += ", ";               // Añadimos coma y espacio
+            }
+        }
+        return "Book[name=" + name + ",authors={" + authorsStr + "},price=" + price + ",qty=" + qty + "]";  // Concatenamos todos los datos del libro
+    }
+}

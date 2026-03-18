@@ -1,35 +1,45 @@
 package BloqueB.CustomerPackage;
 
-public class Customer {/** creamos una clase similar a de customer en customeracountpackage con diferencia de que ahora hay descuento */
-    private int id;
-    private String name;
-    private int discount;
+/**
+ * Representa un cliente con ID, nombre y porcentaje de descuento.
+ */
+public class Customer {  /** Definimos la clase Customer con atributos extendidos para descuentos. */
 
-    public Customer(int id, String name, int discount) {/** definimos las variables que vamos a usar */
-        this.id = id;
-        this.name = name;
-        this.discount = discount;
+private int id;       // Identificador único del cliente
+    private String name;  // Nombre del cliente
+    private int discount; // Porcentaje de descuento del cliente
+
+    /** Constructor con ID, nombre y porcentaje de descuento. */
+    public Customer(int id, String name, int discount) {
+        this.id = id;       // Guardamos el ID del cliente
+        this.name = name;   // Guardamos el nombre del cliente
+        this.discount = discount;  // Guardamos el porcentaje de descuento
     }
 
-    public int getId() {/** indicamos los metodos que nos van a permitir usar las vcariables */
-        return id;
+    /** Devuelve el ID del cliente. */
+    public int getId() {
+        return id;  // Devolvemos el ID del cliente
     }
 
+    /** Devuelve el nombre del cliente. */
     public String getName() {
-        return name;
+        return name;  // Devolvemos el nombre del cliente
     }
 
+    /** Devuelve el porcentaje de descuento del cliente. */
     public int getDiscount() {
-        return discount;
+        return discount;  // Devolvemos el porcentaje de descuento
     }
 
+    /** Modifica el porcentaje de descuento del cliente. */
     public void setDiscount(int discount) {
-        this.discount = discount;
+        this.discount = discount;  // Actualizamos el porcentaje de descuento
     }
 
+    /** Devuelve una representación en texto del cliente con descuento. */
     @Override
-    public String toString() { /** creamos el mismo string que en customeracountpackage pero añadiendo el descuento */
+    public String toString() {
         // Formato requerido: "name(id)(discount%)"
-        return name + "(" + id + ")(" + discount + "%)";
+        return name + "(" + id + ")(" + discount + "%)";  // Concatenamos nombre, ID y descuento formateado
     }
 }

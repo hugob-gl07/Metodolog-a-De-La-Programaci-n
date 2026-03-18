@@ -1,31 +1,39 @@
 package BloqueB.CustomerAccountPackage;
 
-public class Customer {/** creamos una clase donde introducimos los datos que vamos a meter sobre un cliente */
-    private int id;
-    private String name;
-    private char gender;
+/**
+ * Representa un cliente con ID, nombre y género.
+ */
+public class Customer {  /** Definimos la clase Customer con sus atributos principales. */
 
-    public Customer(int id, String name, char gender) { /** definimos y pedimos esas variables */
-        this.id = id;
-        this.name = name;
-        this.gender = gender;
+private int id;     // Identificador único del cliente
+    private String name; // Nombre del cliente
+    private char gender; // Género del cliente
+
+    /** Constructor con ID, nombre y género. */
+    public Customer(int id, String name, char gender) {
+        this.id = id;     // Guardamos el ID del cliente
+        this.name = name; // Guardamos el nombre del cliente
+        this.gender = gender; // Guardamos el género del cliente
     }
 
-    public int getId() { /** creamos unos metodos que nos proporcionen la posibilidad de obtener los datos las variables que hemso metido */
-        return id;
+    /** Devuelve el ID del cliente. */
+    public int getId() {
+        return id;  // Devolvemos el ID del cliente
     }
 
+    /** Devuelve el nombre del cliente. */
     public String getName() {
-        return name;
+        return name;  // Devolvemos el nombre del cliente
     }
 
+    /** Devuelve el género del cliente. */
     public char getGender() {
-        return gender;
+        return gender;  // Devolvemos el género del cliente
     }
 
+    /** Devuelve una representación en texto del cliente. */
     @Override
-    public String toString() { /** creamos un string que indique el nombre del cliente junto a su id */
-
-        return name + "(" + id + ")";
+    public String toString() {
+        return name + "(" + id + ")";  // Concatenamos nombre e ID entre paréntesis
     }
 }
