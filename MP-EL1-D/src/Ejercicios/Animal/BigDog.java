@@ -1,22 +1,27 @@
 package Ejercicios.Animal;
-//BigDog extiende a la clase Dog (clase hija).
+
+// BigDog hereda de Dog, aprovechando toda su estructura previa.
 public class BigDog extends Dog {
-    //Constructor sencillo que implementa el atruuto de la clase abstracta Animal.
+    //constructor básico
     public BigDog(String name) {
         super(name);
     }
-//Método greets propio de BigDog
+
+    // Sobrescribe el saludo básico de Dog/Animal.
     @Override
     public void greets() {
         System.out.println("Wooow");
     }
-//Al igual que la clase Dog, en caso de array con la clase Dog (que haya un BigDog y más de un Dog), tiene un método correspondiente.
+
+    // Sobrescribe el método de Dog para cuando se encuentra con un perro normal.
     @Override
     public void greets(Dog another) {
         System.out.println("Woooooow");
     }
-//Al igual que la clase Dog, en caso de array, tiene un método correspondiente:
+
+    // Nueva sobrecarga específica: Saludo especial cuando se encuentran 
+    // dos perros grandes. Es el nivel más específico de la jerarquía.
     public void greets(BigDog another) {
-        System.out.println("Wooooooooow");
+        System.out.println("Wooooooooow");//Devuelve por pantalla el método greets cuuando hay más de un BigDog (sobrecarga).
     }
 }
