@@ -1,59 +1,79 @@
 package BloqueB.AuthorBookPackage;
 
-public class Book { /** creamos una serie de datos privados que usaremos mas adelantre */
-    private String isbn;
-    private String name;
-    private Author author;
-    private double price;
-    private int qty = 0;
+/**
+ * Representa un libro con ISBN, nombre, autor, precio y cantidad.
+ */
+public class Book {
 
-    public Book(String isbn, String name, Author author, double price, int qty) { /** creamos esta clase para definir las variables anteriores */
-        this.isbn = isbn;
-        this.name = name;
-        this.author = author;
-        this.price = price;
-        this.qty = qty;
-    }
-    public Book(String isbn, String name, Author author, double price) { /** creamos esta clase para definir las variables anteriores pero sin la cantidad de libros */
-        this.isbn = isbn;
-        this.name = name;
-        this.author = author;
-        this.price = price;
-    }
-    public String getIsbn() { /** una vez que tenemos en valor de cada variable creamos distintos metodos para poder obtener las variables usando solo el metodo el metodo get en otra clase*/
-        return isbn;
+    private String isbn;    // Identificador único del libro
+    private String name;    // Nombre del libro
+    private Author author;  // Autor del libro
+    private double price;   // Precio del libro
+    private int qty = 0;    // Cantidad disponible del libro
+
+    /** Constructor con todos los datos del libro.*/
+    public Book(String isbn, String name, Author author, double price, int qty) {
+        this.isbn = isbn;     // Guardamos el ISBN del libro
+        this.name = name;     // Guardamos el nombre del libro
+        this.author = author; // Guardamos el autor del libro
+        this.price = price;   // Guardamos el precio del libro
+        this.qty = qty;       // Guardamos la cantidad disponible
     }
 
+    /**
+     * Constructor sin cantidad inicial.
+     * Cantidad por defecto: 0
+     */
+    public Book(String isbn, String name, Author author, double price) {
+        this.isbn = isbn;     // Guardamos el ISBN del libro
+        this.name = name;     // Guardamos el nombre del libro
+        this.author = author; // Guardamos el autor del libro
+        this.price = price;   // Guardamos el precio del libro
+    }
+
+    /** Devuelve el ISBN del libro.*/
+    public String getIsbn() {
+        return isbn; // Devolvemos el ISBN del libro
+    }
+
+    /** Devuelve el nombre del libro.*/
     public String getName() {
-        return name;
+        return name; // Devolvemos el nombre del libro
     }
 
+    /** Devuelve el autor del libro.*/
     public Author getAuthor() {
-        return author;
+        return author; // Devolvemos el autor del libro
     }
 
+    /** Devuelve el precio del libro.*/
     public double getPrice() {
-        return price;
+        return price; // Devolvemos el precio del libro
     }
 
+    /** Modifica el precio del libro.*/
     public void setPrice(double price) {
-        this.price = price;
+        this.price = price; // Actualizamos el precio del libro
     }
 
+    /** Devuelve la cantidad disponible del libro.*/
     public int getQty() {
-        return qty;
+        return qty; // Devolvemos la cantidad disponible
     }
 
+    /** Modifica la cantidad disponible del libro.*/
     public void setQty(int qty) {
-        this.qty = qty;
+        this.qty = qty; // Actualizamos la cantidad disponible
     }
 
+    /** Devuelve el nombre del autor del libro delegando en Author.getName().*/
     public String getAuthorName() {
-        return author.getName();
+        return author.getName(); // Delegamos en el método getName() de Author
     }
 
+    /** Devuelve una representación en texto del libro.*/
     @Override
-    public String toString() { /** creamos un string donde añadimos en una variable string todas las variables anteriores formando asi los datos de un libro */
+    public String toString() {
         return "Book[isbn=" + isbn + ",name=" + name + "," + author.toString() + ",price=" + price + ",qty=" + qty + "]";
     }
 }

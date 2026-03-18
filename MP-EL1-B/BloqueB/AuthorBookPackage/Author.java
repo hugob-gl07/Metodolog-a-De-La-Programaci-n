@@ -1,28 +1,37 @@
 package BloqueB.AuthorBookPackage;
 
-public class Author { /** creamos una clase donde pediremos tanto el nombre como el correo del autor, por eso las variables privadas */
-    private String name;
-    private String email;
+/**
+ * Representa un autor con nombre y email.
+ */
+public class Author {
 
-    public Author(String name, String email) { /** indicamos que estos son lso datos a usar */
-        this.name = name;
-        this.email = email;
+    private String name;  // Nombre del autor
+    private String email; // Email del autor
+
+    /** Constructor con nombre y email.*/
+    public Author(String name, String email) {
+        this.name = name;   // Guardamos el nombre del autor
+        this.email = email; // Guardamos el email del autor
     }
 
-    public String getName() { /** pedimos el nombre */
-        return name;
+    /** Devuelve el nombre del autor.*/
+    public String getName() {
+        return name; // Devolvemos el nombre del autor
     }
 
-    public String getEmail() { /** pedimos el correo dos veces como si fuese una autentificacion */
-        return email;
+    /** Devuelve el email del autor.*/
+    public String getEmail() {
+        return email; // Devolvemos el email del autor
     }
 
+    /** Modifica el email del autor.*/
     public void setEmail(String email) {
-        this.email = email;
+        this.email = email; // Actualizamos el email del autor
     }
 
+    /** Devuelve una representación en texto del autor.*/
     @Override
-    public String toString() { /** creamos un string el cual nos devuelva un texto con su nombre y apellido */
-        return "Author[name=" + name + ",email=" + email + "]";
+    public String toString() {
+        return "Author[name=" + name + ",email=" + email + "]"; // Devolvemos el autor en formato texto
     }
 }
