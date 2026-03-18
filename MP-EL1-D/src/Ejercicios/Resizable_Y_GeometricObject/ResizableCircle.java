@@ -31,6 +31,7 @@ public class ResizableCircle extends Circle implements Resizable {
     // Al llamar a super.toString(), se incluye toda la cadena generada por Circle 
     // (que a su vez incluye la de Shape), demostrando una trazabilidad total 
     // a través de la cadena de herencia.
+    //Devuelve por pantalla el tipo básico string.
     @Override
     public String toString() {
         return "ResizableCircle[" + super.toString() + "]";
