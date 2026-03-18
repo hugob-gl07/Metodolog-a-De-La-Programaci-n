@@ -1,0 +1,27 @@
+@startuml
+class Circle{
+    - radius:double
+    - color:String
+    + Circle()
+    + Circle(radius:double)
+    + Circle(radius:double,color:String)
+    + getRadius():double
+    + setRadius(radius:double):void
+    + getColor():String
+    + getArea():double
+    + setColor(color:String):void
+    + toString():String
+}
+class Cylinder{
+    - base:Circle
+    - height:double
+    + Cylinder()
+    + Cylinder(radius:double)
+    + Cylinder(radius:double,height:double)
+    + Cylinder(radius:double,height:double,color:String)
+    + getHeight():double
+    + setHeight(height:double):void
+    + getVolume():double
+}
+Circle --o Cylinder:composes
+@enduml

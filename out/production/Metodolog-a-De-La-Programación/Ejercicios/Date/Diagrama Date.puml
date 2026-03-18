@@ -1,0 +1,33 @@
+@startuml
+class Date{
+    - day:int
+    - month:int
+    - year:int
+    + Date(day:int,month:int,year:int)
+    + getDay():int
+    + getMonth():int
+    + getYear():int
+    + setDay(day:int):void
+    + setMonth(month:int):void
+    + setYear(year:int):void
+    + setDate(day:int,month:int,year:int):void
+    + toString():String
+}
+
+note top of Date
+    day= [1,31]
+end note
+
+note left of Date::month
+    month= [1,12]
+end note
+
+note left of Date::year
+    year=[1900,9999]
+end note
+
+note bottom of Date
+    dd/mm/yyyy with leading zero
+end note
+
+@enduml

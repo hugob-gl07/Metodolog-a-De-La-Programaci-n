@@ -1,0 +1,37 @@
+@startuml
+left to right direction
+class LineSub{
+    - end: Point
+    + LineSub(begin:Point,end:Point)
+    + LineSub(beginX:int,beginY:int,endX:int,endY:int)
+    + getBegin():Point
+    + getEnd():Point
+    + setBegin(begin:Point):void
+    + setEnd(end:Point):void
+    + getBeginX():int
+    + getBeginY():int
+    + setBeginX(x:int):void
+    + setBeginY(y:int):void
+    + getEndX():int
+    + getEndY():int
+    + setEndX(x:int):void
+    + setEndY(y:int):void
+    + setBeginXY(x:int,y:int):void
+    + setEndXY(x:int,y:int):void
+    + getLength():double
+    + getGradient():double
+    + toString():String
+}
+class Point {
+    - x:int
+    - y:int
+    + Point(x:int,y:int)
+    + getX():int
+    + setX(x:int):void
+    + getY():int
+    + setY(y:int):void
+    + setXY(x:int,y:int):void
+    + toString():String
+}
+LineSub --|>  Point: extends
+@enduml

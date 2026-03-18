@@ -1,0 +1,42 @@
+@startuml
+class Customer{
+    -id:int
+    -name:String
+    -discount:int
+    + Customer(id:int,name:String,discount:int)
+    + getId():int
+    + getName():String
+    + getDiscount():int
+    + setDiscount(discount:int):void
+    + toString():String
+}
+class Invoice{
+    -id:int
+    -customer:Customer
+    -amount:double
+
+    + Invoice(id:int,customer:Customer,amount:double)
+    + getId():int
+    + getCustomer():Customer
+    + setCustomer(customer:Customer):void
+    + getAmount():double
+    + setAmount(amount:double):void
+    + getCustomerId():int
+    + getCustomerName():String
+    + getCustomerDiscount():int
+    + getAmountAfterDiscount():double
+    + toString():String
+}
+Invoice o-right- "1" Customer
+note bottom of Customer
+    name(id)(discount%)
+end note
+
+note bottom of Invoice
+    Invoice[id=?,customer=name(id)(discount%),amount=?]
+end note
+
+note left of Invoice::getAmountAfterDiscount
+    Return the amount after discount
+end note
+@enduml

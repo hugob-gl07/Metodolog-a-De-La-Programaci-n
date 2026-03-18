@@ -1,0 +1,32 @@
+@startuml
+class Book{
+    - name:String
+    - authors:Author[]
+    - price: double
+    - qty: int = 0
+    + Book(name:String,authors:Author[],price:double)
+    + Book(name:String,authors:Author[],price:double,qty:int)
+    + getName():String
+    + getAuthor():Author[]
+    + getPrice():double
+    + setPrice(price:double):void
+    + getQty():int
+    + setQty(qty:int):void
+    + toString():String
+    + getAuthorNames():String
+}
+class Author{
+    -name:String
+    -email:String
+    -gender:char
+}
+
+note bottom of Book
+    Book[name=n,authors{Author[name=n,email=e,gender=g],....},price=p,qty=q]
+end note
+
+note bottom of Book
+    authorName1,authorName2
+end note
+Book o-right- Author
+@enduml

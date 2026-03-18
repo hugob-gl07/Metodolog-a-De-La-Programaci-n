@@ -1,0 +1,40 @@
+@startuml
+class MyPoint{
+    - x:int = 0
+    - y:int = 0
+    + MyPoint()
+    + MyPoint(x:int,y:int)
+    + getX():int
+    + setX(x:int):void
+    + getY():int
+    + setY(y:int):void
+    + getXY():int[2]
+    + setXY(x:int,y:int):double
+    + toString():String
+    + distance(x:int,y:int):double
+    + distance(another:MyPoint):double
+    + distance():double
+}
+
+note left of MyPoint::getXY
+    Return a 2-element int[] of {x,y}
+end note
+
+note left of MyPoint::toString
+    (x,y)
+end note
+
+note bottom of MyPoint
+    Distance from this point to the
+    given point at (x,y)
+end note
+
+note right of MyPoint::distance(x:int,y:int)
+    Distance from this point to the
+    given instance of MyPoint
+end note
+
+note right of MyPoint::distance(another:MyPoint)
+    Distance from this point to (0,0)
+end note
+@enduml

@@ -1,0 +1,41 @@
+@startuml
+class MyPoint{
+    - x:int
+    - y:int
+}
+class MyCircle{
+    - {field} centro:MyPoint=(0,0)
+    - radius:int = 1
+    + MyCircle()
+    + MyCircle(x:int,y:int,radius:int)
+    + MyCircle(center:MyPoint,radius:int)
+    + getRadius():int
+    + setRadius(radius:int):void
+    + getCenter():MyPoint
+    + setCenter(center:MyPoint):void
+    + getCenterX():int
+    + setCenterX(x:int):void
+    + getCenterY():int
+    + setCenterY(y:int):void
+    + getCenterXY():int[2]
+    + setCenterXY(x:int,y:int):void
+    + toString():String
+    + getArea():double
+    + getCircumference():double
+    + distance(another:MyCircle):double
+}
+note bottom of MyCircle
+    MyCircle[radius=r,center=(x,y)]
+    Re-use MyPoint's toString()
+end note
+
+note left of MyCircle::distance
+    "Return the distance between the centers
+    of this circle and the given MyCircle
+    instance another. To re-use MyPoint's
+    distance()
+end note
+
+MyCircle o-right- MyPoint
+
+@enduml

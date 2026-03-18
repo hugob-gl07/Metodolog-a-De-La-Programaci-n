@@ -1,0 +1,20 @@
+@startuml
+class Rectangle{
+    - length:float= 1.0f
+    - width:float= 1.0f
+    + Rectangle()
+    + Rectangle(length:float,width:float)
+    + getLength():float
+    + setLength(length:float):void
+    + getWidth():float
+    + setWith(width:float):void
+    + getArea():double
+    + getPerimeter():double
+    +toString():String
+}
+
+note bottom of Rectangle
+    Rectangle[length=?,width=?]
+end note
+
+@enduml

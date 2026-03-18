@@ -1,0 +1,61 @@
+@startuml
+interface Movable {
+    + moveUp():void
+    + moveDown():void
+    + moveLeft():void
+    + moveRight():void
+}
+class MovablePoint {
+    ~ x: int
+    ~ y: int
+    ~ xSpeed: int
+    ~ ySpeed: int
+    + MovablePoint(x: int, y: int, xSpeed: int, ySpeed: int)
+    + moveUp():void
+    + moveDown():void
+    + moveLeft():void
+    + moveRight():void
+    + toString():String
+}
+class MovableCircle {
+    ~ center:MovablePoint
+    ~ radius:int
+    + MovableCircle(center: MovablePoint, radius: int)
+    + moveUp():void
+    + moveDown():void
+    + moveLeft():void
+    + moveRight():void
+    + toString():String
+}
+MovablePoint ..|> Movable: implements
+MovableCircle ..|> Movable: implements
+
+note left of MovablePoint::moveUp
+**y -= ySpeed**
+end note
+
+note left of MovablePoint::moveDown
+**y += ySpeed**
+end note
+
+note left of MovablePoint::moveLeft
+**x -= xSpeed**
+end note
+
+note left of MovablePoint::moveRight
+**x += xSpeed**
+end note
+
+note right of MovableCircle
+**Todos los métodos de movimiento**
+**delegan al centro (MovablePoint)**
+end note
+
+note bottom of MovableCircle
+**"(x,y),speed=(xSpeed,ySpeed)"**
+end note
+
+note bottom of MovablePoint
+**"(x,y),speed=(x,y)"**
+end note
+@enduml

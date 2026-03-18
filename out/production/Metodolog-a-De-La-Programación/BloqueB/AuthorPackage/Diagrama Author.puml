@@ -1,0 +1,67 @@
+@startuml
+
+class Author {
+    + getName():String
+}
+class Book {
+    - isbn: String
+    - name: String
+    - author: Author
+    - price: double
+    - qty: int
+    + Book(isbn:String, name:String, author:Author, price:double, qty:int)
+    + Book(isbn:String, name:String, author:Author, price:double)
+    + getIsbn():String
+    + getName():String
+    + getAuthor():Author
+    + getPrice():double
+    + setPrice(price:double):void
+    + getQty():int
+    + setQty(qty:int):void
+    + getAuthorName():String
+    + toString():String
+}
+Book *-- Author : composición
+
+note left of Book::getIsbn
+**DEVUELVE EL ISBN DEL LIBRO**
+end note
+
+note left of Book::getName
+**DEVUELVE EL NOMBRE DEL LIBRO**
+end note
+
+note left of Book::getAuthor
+**DEVUELVE EL AUTOR DEL LIBRO**
+end note
+
+note left of Book::getPrice
+**DEVUELVE EL PRECIO DEL LIBRO**
+end note
+
+note left of Book::setPrice
+**MODIFICA EL PRECIO DEL LIBRO**
+end note
+
+note left of Book::getQty
+**DEVUELVE LA CANTIDAD DEL LIBRO**
+end note
+
+note left of Book::setQty
+**MODIFICA LA CANTIDAD DEL LIBRO**
+end note
+
+note left of Book::getAuthorName
+**DELEGA EN Author.getName()**
+end note
+
+note left of Book::toString
+**DEVUELVE ISBN, NOMBRE,**
+**AUTOR, PRECIO Y CANTIDAD**
+end note
+
+note bottom of Book
+Constructor sin qty: qty por defecto = 0
+end note
+
+@enduml

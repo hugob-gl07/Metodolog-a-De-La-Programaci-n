@@ -1,0 +1,73 @@
+@startuml
+class Shape{
+    - color:String = "red"
+    - filled:boolean= true
+    + Shape()
+    + Shape(color:String,filled:boolean)
+    + getColor():String
+    + setColor(color:String):void
+    + isFilled():boolean
+    + setFilled(filled:boolean):void
+    + toString():String
+}
+class Circle{
+    - radius:double = 1.0
+    + Circle()
+    + Circle(radius:double)
+    + Circle(radius:double,color:String,filled:boolean)
+    + getRadius():double
+    + setRadius(radius:double):void
+    + getArea():double
+    + getPerimeter():double
+    + toString():String
+}
+class Rectangle{
+    - width:double = 1.0
+    - length:double = 1.0
+    + Rectangle()
+    + Rectangle(width:double,length:double)
+    + Rectangle(width:double,length:double, color:String,filled:boolean)
+    + getWidth():double
+    + setWidth(width:double):void
+    + getLength():double
+    + setLength(length:double):void
+    + getArea():double
+    + getPerimeter():double
+    + toString():String
+}
+class Square{
+    + Square()
+    + Square(side:double)
+    + Square(side:double,color:String,filled:boolean)
+    + getSide():double
+    + setSide(side:double):void
+    + setWidth(side:double):void
+    + setLength(side:double):void
+    + toString():String
+}
+note left of Shape::toString
+    Shape[color=?,filled=?]
+end note
+
+note right of Circle::toString
+    "Circle[Shape[color=?,filled=?],radius=?]
+end note
+
+note right of Rectangle::toString
+    Rectangle[Shape[color=?,filled=?],width=?,length=?]
+end note
+
+note left of Square::setWidth
+    The length and width shall be set to the same value
+end note
+
+note left of Square::setLength
+    The length and width shall be set to the same value
+end note
+note left of Square::toString
+    Square[Rectangle[Shape[color=?,filled=?],width=?,length=?]]
+end note
+Shape <|-- Circle: extends
+Shape <|--  Rectangle: extends
+Rectangle <|-- Square
+@enduml

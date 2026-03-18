@@ -1,0 +1,31 @@
+@startuml
+class Circle{
+    - radius:double = 1.0
+    - color:String = "red"
+    + Circle()
+    + Circle(radius:double)
+    + Circle(radius:double,color:String)
+    + getRadius():double
+    + setRadius(radius:double):void
+    + getColor():String
+    + setColor(color:String):void
+    + getArea():double
+    + toString():String
+}
+
+class Cylinder{
+    - height:double = 1.0
+    + Cylinder()
+    + Cylinder(radius:double)
+    + Cylinder(radius:double,height:double)
+    + Cylinder(radius:double,height:double,color:String)
+    + getHeight():double
+    + setHeight(height:double):void
+    + getVolume():double
+}
+
+note left of Circle::toString
+    Circle[radius=r,color=c]
+end note
+Circle "extends  " <|-- "superclass subclass" Cylinder
+@enduml

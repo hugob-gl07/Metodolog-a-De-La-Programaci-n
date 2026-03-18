@@ -1,0 +1,25 @@
+@startuml
+class InvoiceItem{
+    - id:String
+    - desc:String
+    - qty: int
+    - unitPrice:double
+    + InvoiceItem(id:String,desc:String,qty:int,unitPrice:double)
+    + getId():String
+    + getDesc():String
+    + getQty():int
+    + setQty(qty:int):void
+    + getUnitPrice():double
+    + setUnitPrice(unitPrice:double):void
+    + getTotal():double
+    + toString():String
+}
+
+note bottom of InvoiceItem
+    InvoiceItem[id=?,desc=?,qty=?,unitPrice=?]
+end note
+
+note left of InvoiceItem::getTotal
+    unitPrice *qty
+end note
+@enduml

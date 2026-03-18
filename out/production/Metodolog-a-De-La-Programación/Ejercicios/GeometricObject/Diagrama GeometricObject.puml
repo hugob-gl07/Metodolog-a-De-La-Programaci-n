@@ -1,0 +1,40 @@
+@startuml
+interface GeometricObject {
+    + getArea(): double
+    + getPerimeter(): double
+}
+class Circle{
+    - radius: double
+    + Circle(radius:double)
+    + getArea():double
+    + getPerimeter():double
+    + toString():String
+}
+class Rectangle {
+    - width:double
+    - length:double
+    + Rectangle(width:double, length:double)
+    + getArea():double
+    + getPerimeter():double
+    + toString():String
+}
+
+Circle ..|> GeometricObject: implements
+Rectangle ..|> GeometricObject: implements
+note left of Circle::getArea
+**PI * radio²**
+end note
+
+note left of Circle::getPerimeter
+**2 * PI * radio**
+end note
+
+note left of Rectangle::getArea
+**ancho * largo**
+end note
+
+note left of Rectangle::getPerimeter
+**2 * (ancho + largo)**
+end note
+
+@enduml
